@@ -1,17 +1,21 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import MyTitle from './MyTitle'
+import { render } from 'react-dom'
+import { HashRouter, Route } from 'react-router-dom'
+import Landing from './Landing'
+import Search from './Search'
+import '../dist/normalize.css'
+import '../dist/style.css'
 
-var MyFirstComponent = React.createClass({
+class App extends React.Component {
   render () {
     return (
-      <div>
-        <MyTitle title= 'Title one'  color= 'peru'/>
-        <MyTitle title= 'Title two'  color= 'mediumaquamarine'/>
-        <MyTitle title= 'Title three'  color= 'rebbcapurple'/>
-      </div>
+      <HashRouter>
+        <div className='app'>
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/search' component={Search} />
+        </div>
+      </HashRouter>
     )
   }
-})
-
-ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'))
+}
+render(<App />, document.getElementById('app'))

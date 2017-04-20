@@ -1,8 +1,8 @@
 {
     "presets": [
         "react", ["es2015", {
-            "modules": false, 
-            "loose":true //only include fast and small polyfills, exclude edge cases
+            "modules": false,
+            "loose": true //only include fast and small polyfills, exclude edge cases
         }]
     ]
 }
