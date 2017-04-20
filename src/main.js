@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import MyTitle from './MyTitle'
 
-
 var MyTitleFactory = React.createFactory(MyTitle)
 
 var MyFirstComponent = React.createClass({

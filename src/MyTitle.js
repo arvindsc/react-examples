@@ -13,6 +13,4 @@ var MyTitle = React.createClass({
       }, this.props.userName)))
   }
 })
- export default MyTitle;
-
- 
+export default MyTitle
