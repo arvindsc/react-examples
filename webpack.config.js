@@ -4,7 +4,8 @@ module.exports = () => {
     context: resolve('src'),
     entry: './main.js',
     devServer: {
-      publicPath: '/dist/'
+      publicPath: '/dist/',
+      historyApiFallback: true
     },
     output: {
       filename: 'bundle.js',
@@ -23,6 +24,10 @@ module.exports = () => {
         loader: 'eslint-loader',
         exclude: /node_modules/
 
+      },
+      {
+        test: /\..json$/,
+        loader: 'json-loader'
       },
       {
         exclude: '/node_modules/',

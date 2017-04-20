@@ -1,9 +1,14 @@
 import React from 'react'
+import preload from '../dist/data.json'
 
 class Search extends React.Component {
   render () {
     return (
-      <h1>My Search Page!!</h1>
+      <div className='search'>
+        {preload.shows.map(function (show) {
+          return (<h3> {show.title}</h3>)
+        })}
+      </div>
     )
   }
 }
