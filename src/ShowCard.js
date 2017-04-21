@@ -1,4 +1,7 @@
-import { React } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+
+const { string, shape } = PropTypes
 
 class ShowCard extends React.Component {
   render () {
@@ -13,6 +16,15 @@ class ShowCard extends React.Component {
       </div>
     )
   }
+}
+
+ShowCard.propTypes = {
+  show: shape({
+    poster: string,
+    title: string,
+    year: string,
+    description: string
+  })
 }
 
 export default ShowCard
