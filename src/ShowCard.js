@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const { string, shape } = PropTypes
+const { string } = PropTypes
 
 class ShowCard extends React.Component {
   render () {
-    const { title, poster, year, description } = this.props.show
+    const { title, poster, year, description } = this.props
     return (
       <div className='show-card'>
         <img src={`/dist/img/posters/${poster}`} />
@@ -19,12 +19,10 @@ class ShowCard extends React.Component {
 }
 
 ShowCard.propTypes = {
-  show: shape({
-    poster: string,
-    title: string,
-    year: string,
-    description: string
-  })
+  poster: string,
+  title: string,
+  year: string,
+  description: string
 }
 
 export default ShowCard

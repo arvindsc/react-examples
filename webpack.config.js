@@ -6,7 +6,8 @@ module.exports = () => {
     entry: './main.js',
     devServer: {
       publicPath: '/dist/',
-      historyApiFallback: true
+      historyApiFallback: true,
+      inline: true
     },
     output: {
       filename: 'bundle.js',

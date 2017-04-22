@@ -7,7 +7,7 @@ class Landing extends React.Component {
       <div className='landing'>
         <h1> react-nplayer </h1>
         <input type='text' placeholder='Search' />
-        <Link to='/search'> or Browse All</Link>
+        <Link to='/search'>  Browse All</Link>
       </div>
     )
   }
