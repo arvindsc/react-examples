@@ -12,9 +12,11 @@
     "dev": "webpack-dev-server",
     "validate": "npm-run-all --parallel lint build",
     "lint": "eslint src/**/*.js",
-    "watch": "npm run build -- --watch"
+    "watch": "npm run build -- --watch",
+    "sf": "standard --fix"
+
   },
-  
+
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
