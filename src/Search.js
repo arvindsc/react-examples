@@ -1,7 +1,7 @@
 import React from 'react'
 import preload from '../dist/data.json'
 import ShowCard from './ShowCard'
-import {string} from 'prop-types'
+import { string } from 'prop-types'
 
 class Search extends React.Component {
   constructor (props) {
@@ -9,9 +9,10 @@ class Search extends React.Component {
     this.state = {
       searchTerm: 'default searvh string'
     }
+    this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
   }
   handleSearchTermChange (event) {
-    this.setState({searchTerm: event.target.value})
+    this.setState({ searchTerm: event.target.value })
   }
 
   render () {
@@ -22,9 +23,13 @@ class Search extends React.Component {
           <input onChange={this.handleSearchTermChange} value={this.state.searchTerm} type='text' placeholder='Search' />
         </header>
         <div>
-          {preload.shows.map(function (show) {
-            return <ShowCard key={show.imdbID} {...show} />
-          })}
+          {preload.shows.filter((show) => {
+            return `${show.title} ${show.description}`.toUpperCase()
+              .indexOf(this.state.searchTerm.toUpperCase()) >= 0
+          })
+            .map(function (show) {
+              return <ShowCard key={show.imdbID} {...show} />
+            })}
         </div>
 
       </div>
