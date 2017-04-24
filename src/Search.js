@@ -7,7 +7,7 @@ class Search extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      searchTerm: 'default searvh string'
+      searchTerm: ''
     }
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
   }

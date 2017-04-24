@@ -4,5 +4,10 @@
             "modules": false,
             "loose": true //only include fast and small polyfills, exclude edge cases
         }]
-    ]
+    ],
+    "env": {
+        "test": {
+            "plugins": ["transform-es2015-modules-commonjs"]
+        }
+    }
 }
