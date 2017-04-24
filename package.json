@@ -5,15 +5,12 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "build": "webpack --env.prod -p",
-    "prebuild:dev": "",
-    "build:dev": "webpack --env.dev",
-    "start": "http-server",
+    "build": "webpack",
     "dev": "webpack-dev-server",
-    "validate": "npm-run-all --parallel lint build",
-    "lint": "eslint src/**/*.js",
     "watch": "npm run build -- --watch",
-    "sf": "standard --fix"
+    "sf": "standard --fix",
+    "test": " NODE_ENV=test jest",
+    "lint": "eslint src/**/*.js webpack.config.js"
   },
   "dependencies": {
     "react": "^15.5.4",
