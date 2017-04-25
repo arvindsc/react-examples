@@ -14,11 +14,17 @@ class App extends React.Component {
       <BrowserRouter>
         <div className='app'>
           <Route exact path='/' shows={preload.shows} component={Landing} />
-          <Route exact path='/search'
+          <Route path='/search'
             render={props => {
               return <Search shows={preload.shows} {...props} />
             }} />
-          <Route exact path='/details/:id' component={Details} />
+          <Route
+            path='/details/:id'
+            component={(props) => {
+              console.log(props)
+              const shows = preload.shows.filter((show) => props.match.params.id === show.imdbID)
+              return <Details show={shows[0]} {...props} />
+            }} />
         </div>
       </BrowserRouter>
     )
