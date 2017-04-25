@@ -2,3 +2,4 @@ node_modules
 dist/bundle.js
 .vscode/
 __snapshots__
+coverage

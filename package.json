@@ -11,7 +11,8 @@
     "sf": "standard --fix",
     "test": " NODE_ENV=test jest",
     "update-test":"npm run test -- -u",
-    "lint": "eslint src/**/*.js webpack.config.js"
+    "lint": "eslint src/**/*.js webpack.config.js",
+    "cover": "npm run test -- --coverage"
   },
   "dependencies": {
     "react": "^15.5.4",
