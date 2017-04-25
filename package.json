@@ -10,6 +10,7 @@
     "watch": "npm run build -- --watch",
     "sf": "standard --fix",
     "test": " NODE_ENV=test jest",
+    "update-test":"npm run test -- -u",
     "lint": "eslint src/**/*.js webpack.config.js"
   },
   "dependencies": {
@@ -26,6 +27,8 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.0",
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "react-test-renderer": "^15.5.4",
