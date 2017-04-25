@@ -14,11 +14,10 @@ class App extends React.Component {
       <BrowserRouter>
         <div className='app'>
           <Route exact path='/' shows={preload.shows} component={Landing} />
-          <Route exact
-            path='/search'
-            component={(props) =>
-              <Search {...props} />}
-          />
+          <Route exact path='/search'
+            render={props => {
+              return <Search shows={preload.shows} {...props} />
+            }} />
           <Route exact path='/details/:id' component={Details} />
         </div>
       </BrowserRouter>

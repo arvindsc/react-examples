@@ -1,7 +1,8 @@
 import React from 'react'
-import preload from '../dist/data.json'
 import ShowCard from './ShowCard'
-import { string } from 'prop-types'
+import PropTypes from 'prop-types'
+
+const {string, shape, arrayOf} = PropTypes
 
 class Search extends React.Component {
   constructor (props) {
@@ -23,20 +24,23 @@ class Search extends React.Component {
           <input onChange={this.handleSearchTermChange} value={this.state.searchTerm} type='text' placeholder='Search' />
         </header>
         <div>
-          {preload.shows.filter((show) => {
-            return `${show.title} ${show.description}`.toUpperCase()
-              .indexOf(this.state.searchTerm.toUpperCase()) >= 0
-          })
+          {this.props.shows
+            .filter((show) => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
             .map(function (show) {
-              return <ShowCard key={show.imdbID} {...show} />
-            })}
+              return (<ShowCard key={show.imdbID} {...show} />)
+            })
+          }
         </div>
-
       </div>
     )
   }
 }
+
 Search.propTypes = {
-  searchTerm: string
+  shows: arrayOf(shape({
+    title: string,
+    description: string
+  }))
 }
+
 export default Search
