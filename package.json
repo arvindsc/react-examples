@@ -8,7 +8,6 @@
     "build": "webpack",
     "dev": "webpack-dev-server",
     "watch": "npm run build -- --watch",
-    "sf": "standard --fix",
     "test": " NODE_ENV=test jest",
     "update-test": "npm run test -- -u",
     "lint": "eslint src/**/*.js webpack.config.js",
