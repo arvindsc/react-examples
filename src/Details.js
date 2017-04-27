@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from './Header'
 import PropTypes from 'prop-types'
 
 const { string, shape } = PropTypes
@@ -9,9 +10,7 @@ class Details extends React.Component {
     console.log(this.props.show)
     return (
       <div className='details'>
-        <header>
-          <h1>nvideo</h1>
-        </header>
+        <Header />
         <section>
           <h1>{title}</h1>
           <h2>({year})</h2>

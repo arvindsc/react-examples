@@ -1,8 +1,9 @@
 import React from 'react'
 import ShowCard from './ShowCard'
+import Header from './Header'
 import PropTypes from 'prop-types'
 
-const {string, shape, arrayOf} = PropTypes
+const { string, shape, arrayOf } = PropTypes
 
 class Search extends React.Component {
   constructor (props) {
@@ -20,10 +21,11 @@ class Search extends React.Component {
   render () {
     return (
       <div className='search'>
-        <header>
-          <h1>nplayer</h1>
-          <input onChange={this.handleSearchTermChange} value={this.state.searchTerm} type='text' placeholder='Search' />
-        </header>
+        <Header
+          showSearh
+          searchTerm={this.state.searchTerm}
+          handleSearchTermChange={this.handleSearchTermChange}
+        />
         <div>
           {this.props.shows
             .filter((show) => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
