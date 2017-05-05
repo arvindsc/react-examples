@@ -5,9 +5,18 @@ import PropTypes from 'prop-types'
 const { string, shape } = PropTypes
 
 class Details extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      ombdData: {}
+    }
+  }
+  componentDidMount () {
+
+  }
   render () {
-    const { title, year, poster, trailer, description } = this.props.show
-    console.log(this.props.show)
+    const {title, year, poster, trailer, description} = this.props.show
+
     return (
       <div className='details'>
         <Header />
@@ -30,7 +39,8 @@ Details.propTypes = {
     year: string,
     poster: '',
     trailer: string,
-    description: string
+    description: string,
+    imdbID: string
   })
 }
 export default Details

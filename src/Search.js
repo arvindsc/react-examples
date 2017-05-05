@@ -22,7 +22,7 @@ class Search extends React.Component {
     return (
       <div className='search'>
         <Header
-          showSearh
+          showSearch
           searchTerm={this.state.searchTerm}
           handleSearchTermChange={this.handleSearchTermChange}
         />

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 class Header extends React.Component {
   render () {
     let utilSpace
+    console.log(this.props.showSearch)
     if (this.props.showSearch) {
       utilSpace = <input onChange={this.props.handleSearchTermChange} value={this.props.searchTerm} type='text' placeholder='Search' />
     } else {

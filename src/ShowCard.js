@@ -6,7 +6,7 @@ const { string } = PropTypes
 
 class ShowCard extends React.Component {
   render () {
-    const { title, poster, year, description, imdbID} = this.props
+    const {title, poster, year, description, imdbID} = this.props
     return (
       <Link to={`/details/${imdbID}`}>
         <div className='show-card'>
@@ -26,7 +26,8 @@ ShowCard.propTypes = {
   poster: string,
   title: string,
   year: string,
-  description: string
+  description: string,
+  imdbID: string
 }
 
 export default ShowCard

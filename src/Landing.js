@@ -1,15 +1,26 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
+const { string } = PropTypes
 class Landing extends React.Component {
   render () {
     return (
       <div className='landing'>
         <h1> react-nplayer </h1>
-        <input type='text' placeholder='Search' />
+        <input value={this.props.searchTerm} type='text' placeholder='Search' />
         <Link to='/search'>  Browse All</Link>
       </div>
     )
   }
 }
-export default Landing
+Landing.propTypes = {
+  searchTerm: string
+}
+const mapStateToProps = (state) => {
+  return {
+    searchTerm: state.searchTerm
+  }
+}
+export default connect(mapStateToProps)(Landing)
